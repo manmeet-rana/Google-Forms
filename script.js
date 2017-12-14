@@ -5,7 +5,7 @@ jQuery(function(){
     jQuery('a.add-field').click(function(event){
         event.preventDefault();
         //var name = oForm.elements["name"].value;
-        var name = document.getElementById('question').value;
+        var name = document.getElementById('question' + counter).value;
         alert(name);
 
 /*     
@@ -14,9 +14,9 @@ jQuery(function(){
         var list = document.getElementsByClassName('list').value;
         alert(list);
         a[question] = list;*/
-        var newRow = jQuery('<input type = "text" class = "question" placeholder = "type your question here">&nbsp;<select><option value="1">Text</option><option value="2">Number</option><option value="3">Date</option></select><br>');
+        counter=counter+1;
+        var newRow = jQuery('<input type = "text" id = "questionCounter"  placeholder = "type your question here">&nbsp;<select><option value="1">Text</option><option value="2">Number</option><option value="3">Date</option></select><br>');
         jQuery('div.main1').append(newRow);
-counter=counter+1;
     });
 });
 
